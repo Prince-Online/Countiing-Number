@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #counter {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #incrementButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="counter">Count: 0</div>
+    <button id="incrementButton" onclick="incrementCounter()">Click to Increment</button>
+
+    <script>
+        let count = localStorage.getItem('count') || 0;
+
+        document.getElementById('counter').innerText = 'Count: ' + count;
+
+        function incrementCounter() {
+            count++;
+            document.getElementById('counter').innerText = 'Count: ' + count;
+            localStorage.setItem('count', count);
+        }
+    </script>
+
+</body>
+</html>
